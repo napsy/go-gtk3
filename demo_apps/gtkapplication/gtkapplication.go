@@ -43,6 +43,12 @@ func main() {
 					fbut.SetSensitive(true)
 				   	fbut3.SetLabel("There you go")})
 
+	entry1 := gtk3.NewEntry()
+	box.PackStart(entry1, false, false, 0)
+	fbut4 := gtk3.NewButtonWithLabel("Get entry text, now!")
+	box.PackStart(fbut4, false, false, 0)
+	fbut4.Connect("clicked", func() { 
+				   	fbut4.SetLabel(entry1.GetText())})
 	// Run applicaton
 	w.ShowAll()
 	app.Run()
